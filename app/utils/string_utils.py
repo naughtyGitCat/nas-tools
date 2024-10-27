@@ -265,11 +265,22 @@ class StringUtils:
         """
         获取URL的域名部分，不含WWW和HTTP
         """
+        common_prefixes: list = ["www."]
+        site_prefixes: dict = {"m-team": ["api.", "rss.", "kp."]}
         if not url:
             return ""
         _, netloc = StringUtils.get_url_netloc(url)
         if netloc:
-            return netloc.lower().replace("www.", "")
+            netloc_lower: str = netloc.lower()
+            # trim common prefix
+            for common_prefix in common_prefixes:
+                netloc_lower = netloc_lower.replace(common_prefix, "")
+            # remove site custom prefix
+            for site_key in site_prefixes.keys():
+                if site_key in netloc_lower:
+                    for prefix in site_prefixes[site_key]:
+                        netloc_lower = netloc_lower.replace(prefix, "")
+            return netloc_lower
         return ""
 
     @staticmethod
