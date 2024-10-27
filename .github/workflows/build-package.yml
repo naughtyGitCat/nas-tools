@@ -175,7 +175,7 @@ jobs:
           name: linux-musl-arm64
           path: /home/runner/work/nas-tools/nas-tools/nas-tools/package/dist/nas-tools.linux.musl.arm64
 
-  Mac-build:
+  Mac-build-amd64:
     runs-on: macos-13
     steps:
       - name: Init Python 3.10.11
