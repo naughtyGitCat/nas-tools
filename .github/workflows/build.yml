@@ -47,7 +47,7 @@ jobs:
 
       -
         name: Login DockerHub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ github.event.inputs.docker_username }}
           password: ${{ github.event.inputs.docker_password }}
@@ -100,7 +100,7 @@ jobs:
 
       -
         name: Login DockerHub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ github.event.inputs.docker_username }}
           password: ${{ github.event.inputs.docker_password }}
