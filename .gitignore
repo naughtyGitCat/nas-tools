@@ -11,6 +11,12 @@
 .vscode/
 Dockerfile-dev
 config/sites.json
+config/temp
+config/plugins
+config/*.db
+config/*.dat
+config/backup_file
+config/archive_file
 nastools_test.py
 /node_modules/**
 package-lock.json
